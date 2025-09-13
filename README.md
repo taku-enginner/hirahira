@@ -4,6 +4,9 @@
 
 ## 実行方法
 1. リポジトリをクローンします
+```sh
+git clone git@github.com:taku-enginner/hirahira.git
+```
 2. ローカルリポジトリで実行します
 
 ```sh
