@@ -17,6 +17,14 @@ git clone git@github.com:taku-enginner/hirahira.git
 
 - ターミナルのサイズが小さいと、画面崩れが起こる場合があります。
 - 強制終了（Ctrl + c）した場合は、`tput cnorm` を実行してカーソルを元に戻してください。
+- `bc`コマンドが必要です。インストールされていない場合は、以下のコマンドでインストールしてください。`which bc`コマンドでインストール確認ができます。
+
+```sh
+# Debian/Ubuntuの場合
+sudo apt update && sudo apt upgrade
+sudo apt install bc
+which bc
+```
 
 ## 機能
 
