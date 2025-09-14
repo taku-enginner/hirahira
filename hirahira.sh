@@ -24,13 +24,14 @@ do
   tput cup "$RUNTEQ_Y" "$RUNTEQ_X" && echo "$i"
   RUNTEQ_Y=$(($RUNTEQ_Y + 1))
 done
+ctrlc_y=$(($RUNTEQ_Y + 1))
+tput cup "$ctrlc_y" "$RUNTEQ_X" && echo "Ctrl + cで即終了 (カーソルが見えない場合は、tput cnorm を実行してください)"
 
 # 木を書く
 tree_y=0
 for i in $(seq 0 $max_y)
 do
   # 木の枝の部分
-  # 上の方
   if [ $tree_y -le 2 ]; then
     tput cup $tree_y "${ochiba[1]}"  && echo '---------------------------------------------------------------------------'
   elif [ $tree_y -le 4 ]; then
@@ -59,7 +60,7 @@ do
 done
 
 tput cup "${ochiba[1]}" "${ochiba[0]}" && echo "#"
-for i in $(seq 1 $(($max_y - "${ochiba[1]}" - 3)))
+for i in $(seq 1 $(($max_y - ${ochiba[1]} - 3)))
 do
   sleep 0.2
   # 1つ前の位置を消す
@@ -80,11 +81,9 @@ done
 tput cup "$RUNTEQ_Y" "$RUNTEQ_X" && echo "遊んでいただき、ありがとうございました！" && RUNTEQ_Y=$(($RUNTEQ_Y + 1))
 tput cnorm
 count=10
-ctrlc_y=$(($RUNTEQ_Y + 1))
 for i in $(seq 1 10)
 do
   tput cup "$RUNTEQ_Y" "$RUNTEQ_X" && echo "$count 秒後に終了します。"
-  tput cup "$ctrlc_y" "$RUNTEQ_X" && echo "Ctrl + cで即終了 (カーソルが見えない場合は、tput cnorm を実行してください)"
   sleep 1
   count=$(($count - 1))
 done
