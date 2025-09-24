@@ -1,6 +1,8 @@
 # ひらひら落ち葉
 
 このシェルスクリプトは、ターミナル上で「ひらひら落ち葉」をアニメーション表示するミニアプリです。RUNTEQミニアプリWeekの課題作品です。
+
+- サンプル動画はこちら
 https://github.com/user-attachments/assets/d393d5ca-3096-4204-b5db-fce0f28fef07
 
 
