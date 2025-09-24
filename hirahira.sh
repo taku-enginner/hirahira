@@ -8,7 +8,11 @@
 
 # 落ち葉1枚
 # x座標：y座標：x方向の速度：周期
-ochiba=(20 3 1 2)
+
+# 周期を乱数にする
+random_period=$((RANDOM % 5 + 1));
+
+ochiba=(20 3 1 $random_period)
 
 max_x=$(tput cols)
 max_y=$(tput lines)
