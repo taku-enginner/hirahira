@@ -7,27 +7,27 @@
 
 title ()
 {
-  max_x = $1
-  max_y = $2
+  local max_x=$1
+  local max_y=$2
   text=('----------------------------' '||__RUNTEQミニアプリWeek__||' '||タイトル：ひらひら落ち葉||' '----------------------------')
-  RUNTEQ_X=$(($max_x/2))
-  RUNTEQ_Y=$(($max_y/2))
+  local RUNTEQ_X=$(($max_x/2))
+  local RUNTEQ_Y=$(($max_y/2))
   for i in ${text[@]}
   do
     tput cup "$RUNTEQ_Y" "$RUNTEQ_X" && echo "$i"
     RUNTEQ_Y=$(($RUNTEQ_Y + 1))
   done
-  ctrlc_y=$(($RUNTEQ_Y + 1))
+  local ctrlc_y=$(($RUNTEQ_Y + 1))
   tput cup "$ctrlc_y" "$RUNTEQ_X" && echo "Ctrl + cで即終了 (カーソルが見えない場合は、tput cnorm を実行してください)"
 }
 
 summer ()
 {
-  max_x=$1
-  max_y=$2
+  local max_x=$1
+  local max_y=$2
 
   # 木を書く
-  tree_y=0
+  local tree_y=0
   for i in $(seq 0 $max_y)
   do
     # 木の枝の部分
